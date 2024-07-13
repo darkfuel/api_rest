@@ -1,6 +1,6 @@
 import express from 'express'
 import cors from 'cors'
-
+import { logServer } from './middlewares/logServer.js'
 import { findall } from './models/joyas.models.js'
 
 const app = express()
@@ -8,6 +8,7 @@ const PORT = process.env.PORT ?? 3000
 
 app.use(cors())
 app.use(express.json())
+app.use(logServer)
 
 app.get('/joyas', async (req, res) => {
   try {
