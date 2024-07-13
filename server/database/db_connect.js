@@ -17,7 +17,7 @@ const db = async (query, values) => {
     console.log('Respuesta exitosa')
     return result.rows
   } catch (error) {
-    console.error('db_connetc => db', error)
+    console.error('[db_connetc => db]', error)
   }
 }
 export default db
